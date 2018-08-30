@@ -1020,23 +1020,6 @@ class Ion_auth_model extends CI_Model
 		return (isset($id)) ? $id : FALSE;
 	}
 
-
-	public function add_pigeon($additional_data = array())
-	{
-		$this->trigger_events('pre_register');
-
-		$manual_activation = $this->config->item('manual_activation', 'ion_auth');
-
-
-		$this->db->insert('pigeon_record',$additional_data;
-
-		$id = $this->db->insert_id();
-
-		return (isset($id)) ? $id : FALSE;
-
-
-	}
-
 	/**
 	 * login
 	 *
@@ -1109,7 +1092,7 @@ class Ion_auth_model extends CI_Model
 				$this->trigger_events(array('post_login', 'post_login_successful'));
 				$this->set_message('login_successful');
 
-				return TRUE;
+				return $query->result_array();
 			}
 		}
 
