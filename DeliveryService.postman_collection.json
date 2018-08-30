@@ -1,0 +1,505 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Delivery Service",
+		"_postman_id": "72ee6382-c572-9339-f0b1-153db321500b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "akanksha",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "kushwaha",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "company_name",
+							"value": "my comp",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "akankshaff11@gmail.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "9876543123",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password_confirm",
+							"value": "123456789",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost/other/index.php/auth/create_user",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "identity",
+							"value": "admin@admin.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost/other/index.php/auth/login/login",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "place_order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "4",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "distance",
+							"value": "500",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "deadline_date",
+							"value": "2018/08/31",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "deadline_time",
+							"value": "11:00",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost/other/index.php/main/user_order",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "customer_orders",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "keyword",
+							"value": "pendingwedwed",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost/other/index.php/main/order_by_user",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "add_pigeon",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "Bonito",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "speed",
+							"value": "80",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "range",
+							"value": "500",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "cost",
+							"value": "2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "downtime",
+							"value": "3",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "max_weight",
+							"value": "20",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"description": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": "http://localhost/other/index.php/auth/add_pigeon",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "pigeon_list",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": "http://localhost/other/index.php/main/pigeon_list",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "edit_pigeon",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "Antonio",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "speed",
+							"value": "70",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "range",
+							"value": "600",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "cost",
+							"value": "2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "downtime",
+							"value": "2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "max_weight",
+							"value": "20",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "pigeon_id",
+							"value": "4",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost/other/index.php/auth/update_pigeon",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "all_order_list",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": "http://localhost/other/index.php/main/all_order_list",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "pigeon_availibility_and_estimation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {},
+				"url": "http://localhost/other/index.php/main/check_available_pigeon_inrange",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "accept_order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "pigeon_id",
+							"value": "8",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "user_order_id",
+							"value": "2",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost/other/index.php/main/assign_orderto_pigeon",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "reject/complete_order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "order_id",
+							"value": "3",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "complete",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost/other/index.php/main/order_status",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "pigeon_leave",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "pigeon_id",
+							"value": "9",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "start_date",
+							"value": "2018-08-31",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "end_date",
+							"value": "2018-09-05",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "leave_type",
+							"value": "casual leave",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost/other/index.php/main/pigeon_leave",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "remove_leave",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "leave_id",
+							"value": "2",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost/other/index.php/main/remove_leave",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get_invoice",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": "http://localhost/other/index.php/main/order_status",
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
