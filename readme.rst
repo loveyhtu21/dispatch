@@ -1,70 +1,75 @@
-###################
-What is CodeIgniter
-###################
+Dispatch (Delivery service) APIs document
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+Here are all the available APIs listed with their functionality and user scope.
 
-*******************
-Release Information
-*******************
+• Signup API: For Customer
+Any of the customer can easily register by using email, password and
+other required fields like first name, last name etc.
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+• Login API: For Customer and Dispatch both
+Any of Customer or Dispatch can login by using their email and
+password.
 
-**************************
-Changelog and New Features
-**************************
+• Place order API: For Customer
+Any of Customer can place his order by providing basics order details like
+the approx distance (in km), deadline date and time.
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+• Customer orders API: For Customer
+Customer can list and filter the orders. There are three types of orders on
+the bases of actions perform by the Dispatch.
 
-*******************
-Server Requirements
-*******************
+	➢ Pending orders: Not accepted or not rejected by Dispatch
+	➢ Accepted orders: Accepted by Dispatch
+	➢ Rejected orders: Rejected by Dispatch
+	➢ Completed orders: Completed by Dispatch
 
-PHP version 5.6 or newer is recommended.
+• Add/Edit Pigeons API: For Dispatch
+Dispatch will add new pigeon or update existing pigeon with required
+details like speed, range etc.
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+• All orders List API: For Dispatch
+Dispatch can list all the Orders list also he can filter Pending orders,
+accepted orders, rejected orders and completed orders.
 
-************
-Installation
-************
+• Pigeons availability and estimate API: For Dispatch
+Dispatch can see how many pigeons are available for a particular order
+on the bases of order’s distance, deadline date and time and the pigeons
+leaves date as well.
+Every pigeon will have his estimated cost and time to be complete for
+that particular order.Dispatch (Delivery service) APIs document
 
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
+• Accept order API: For Dispatch
+Dispatch can accept an order after checking the pigeons availability for
+that. When Dispatch will accept he need to pass order_id and selected
+pigeon’s id for that particular order.
 
-*******
-License
-*******
+• Reject/Complete order API: For Dispatch
+Dispatch can Reject an order if he does not found any pigeons
+availability. He can not reject already accepted/completed order right
+now. At the same movement Dispatch can complete the accepted order
+only.
 
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
+• Add/Remove Pigeon’s Leave API: For Dispatch
+Dispatch can add and remove the leaves for the pigeon. He need to
+provide the the start date of leave, end date of leave and leave type to
+add the leave for a particular Pigeon.
+The Pigeon will available for an order in the following cases:
+	➢ If the order distance is available within the pigeon’s range
+	➢ If the order date does not lies between the any of pigeon’s leaves start date and end date.
 
-*********
-Resources
-*********
+• Generate order Invoice API : For Dispatch or Customer both
+Customer or Dispatch can generate the invoice details for any of the
+completed orders on the bases of selected Pigeon’s calculations
+attributes.
 
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
+Used Response Code List in these APIs:
+	✔ Success: 200
+	✔ Updated: 205
+	✔ Bad Request: 402
+	✔ Required: 405
 
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
 
-***************
-Acknowledgement
-***************
 
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+Thanks.
+Codeignitor Development Team
+TecOrb Technologies Pvt. Ltd.
